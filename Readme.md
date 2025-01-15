@@ -10,7 +10,7 @@ This project enables you to integrate a contact form into your website or applic
 ## Tools and Technologies Used
 - **Azure Functions**: For serverless backend API hosting.
 - **SendGrid**: For sending email notifications.
-- **Python**: For the function logic.
+- **Python 3.10**: For the function logic.
 - **cURL**: For testing the function locally.
 
 ---
@@ -37,9 +37,13 @@ cd contact-form-func
 
 #### Create the Python Azure Function App
 1. Install [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local).
+    ```bash
+    npm install -g azure-functions-core-tools@4 --unsafe-perm true
+   ```
+
 2. Initialize the Azure Function app:
    ```bash
-   func init . --python
+   func init --worker-runtime python
    ```
 3. Create an HTTP-triggered function:
    ```bash
